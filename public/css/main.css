@@ -1,0 +1,13 @@
+.vote-score {
+	font-size: 30px;
+	margin-bottom: 0;
+}
+.vote {
+	opacity: .3
+}
+.vote.active {
+	opacity: 1;
+}
+.vote:hover {
+	opacity: 1;
+}
