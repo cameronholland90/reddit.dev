@@ -20,7 +20,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 });
 $factory->define(App\Post::class, function (Faker\Generator $faker) {
     return [
-    	'created_by' => App\User::all()->random()->id,
+        'created_by' => App\User::all()->random()->id,
         'title' => $faker->sentence,
         'content' => $faker->paragraphs(3, true),
         'url' => $faker->url,

@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ action('HomeController@showWelcome') }}">Reddit.dev</a>
+            <a class="navbar-brand" href="{{ action('PostsController@index') }}">Reddit.dev</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

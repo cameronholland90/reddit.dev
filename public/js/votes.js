@@ -10,7 +10,6 @@ $(document).ready(function() {
 			var url = $('#vote-url').val();
 
 			var callback = function(data) {
-				console.log(data.vote_score);
 				$('#vote-score').text(data.vote_score);
 				$('.vote').removeClass('active');
 				$('[data-vote="' + data.vote + '"]').addClass('active');

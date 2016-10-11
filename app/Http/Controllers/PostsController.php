@@ -125,12 +125,13 @@ class PostsController extends Controller
     public function addVote(Request $request)
     {
         Model::unguard();
-        $vote = Vote::firstOrCreate([
-            'user_id' => $request->user()->id,
-            'post_id' => $request->input('post_id')
+        $vote = Vote::with('post')->firstOrCreate([
+            'post_id' => $request->input('post_id'),
+            'user_id' => $request->user()->id
         ]);
         $vote->vote = $request->input('vote');
         $vote->save();
+        Model::reguard();
 
         $post = $vote->post;
         $post->vote_score = $post->voteScore();

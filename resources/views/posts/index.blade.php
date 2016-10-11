@@ -21,7 +21,7 @@
 						<td>{{ $post->title }}</td>
 						<td><a href="{{ $post->url }}">{{ $post->url }}</a></td>
 						<td>{{ $post->content }}</td>
-						<td>{{ $post->user->name }}</td>
+						<td><a href="{{ action('UsersController@show', $post->created_by) }}">{{ $post->user->name }}</a></td>
 						<td>
 							<a href="{{ action('PostsController@show', $post->id) }}" class="btn btn-primary"><i class="fa fa-search-plus"></i></a>
 							@if($post->ownedBy(Auth::user()))

@@ -10,7 +10,9 @@
 |
 */
 
-Route::get('/', 'HomeController@showWelcome');
+Route::get('/', function() {
+	return redirect()->action('PostsController@index');
+});
 
 Route::resource('posts', 'PostsController');
 Route::post('/posts/add-vote', 'PostsController@addVote');
